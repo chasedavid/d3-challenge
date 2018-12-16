@@ -114,7 +114,7 @@ function makeResponsive() {
 //   };
 
     //read and parse data from csv //store into variable
-   d3.csv('../data/data.csv').then(function(data) {  
+   d3.csv('./assets/data/data.csv').then(function(data) {  
         data.forEach(function(d) {
             d.id = +d.id;
             d.poverty = +d.poverty;
