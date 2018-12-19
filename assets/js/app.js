@@ -49,69 +49,7 @@ function makeResponsive() {
     // Append group element
     var chartGroup = svg.append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-//     //Initial Params
-//     var chosenXAxis = "healthcare";
-
-//     // function used for updating x-scale
-//     function xScale(data, chosenXAxis) {
-//         //create scales
-//         var xLinearScale = d3.scaleLinear()
-//             .domain([d3.min(data, d => d[chosenXAxis]), d3.max(data, d => d[chosenXAxis])])
-//             .range[0, width];
-
-//         return xLinearScale;
-//     };
-
-//     // function used for updating xAxis var upon click axis
-//     function renderAxes(newXScale, xAxis) {
-    
-//         var bottomAxis = d3.axisBottom(newXScale);
-//         xAxis.transition().duration(1000).call(bottomAxis);
-
-//         return xAxis;
-//     };
-
-//     // function used for updating circles group with a transition to
-//     // new circles
-//     function renderCircles(circlesGroup, newXScale, chosenXaxis) {
-
-//         circlesGroup.transition().duration(1000).attr("cx", d => newXScale(d[chosenXAxis]));
-  
-//         return circlesGroup;
-//     };
-
-//     // function used for updating circles group with new tooltip
-//     function updateToolTip(chosenXAxis, circlesGroup) {
-
-//         if (chosenXAxis === "healthcare") {
-//             var label = "healthcare:"; //vs poverty
-//             var targetY = "poverty'";
-//         }
-//         else {
-//             var label = "smoker:"; //vs age
-//             var targetY = "age";
-//         }
-  
-//     var toolTip = d3.tip()
-//       .attr("g", "tooltip")
-//       .offset([80, -60])
-//       .html(function(d) {
-//         return (`${d[targetY]}<br>${label} ${d[chosenXAxis]}`);
-//       });
-  
-//     circlesGroup.call(toolTip);
-  
-//     circlesGroup.on("mouseover", function(data) {
-//         toolTip.show(data);
-//     })
-//       // onmouseout event
-//       .on("mouseout", function(data, index) {
-//         toolTip.hide(data);
-//       });
-  
-//     return circlesGroup;
-//   };
+        
 
     //read and parse data from csv //store into variable
    d3.csv('./assets/data/data.csv').then(function(data) {  
